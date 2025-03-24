@@ -88,51 +88,52 @@ nav ul li a:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 projetos por linha */
     gap: 20px;
-    width: 100%; /* Garantir que a largura ocupe 100% */
-    margin-left: auto; /* Centraliza os itens */
-    margin-right: auto; /* Centraliza os itens */
-    padding: 0 20px; /* Adiciona padding interno para o contêiner */
+    width: 100%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding: 0 20px;
 }
 
 .projeto-item {
-    width: 100%; /* Garante que o card ocupe 100% da largura disponível na grid */
-    max-width: 80%; /* Limita a largura máxima do card */
-    min-height: 300px; /* Define uma altura mínima para os cards */
-    height: auto; /* Deixa a altura do card dinâmica, dependendo do conteúdo */
-    border: 3px solid #27BA06; /* Borda com a cor de destaque */
-    border-radius: 10px; /* Bordas arredondadas */
-    background-color: #fff; /* Fundo branco */
+    width: 100%; 
+    max-width: 80%; 
+    min-height: 300px; 
+    max-height: 500px;
+    height: auto; 
+    border: 3px solid #27BA06; 
+    border-radius: 10px; 
+    background-color: #fff; 
     cursor: pointer;
-    transition: transform 0.3s ease; /* Animação de aumento ao passar o mouse */
+    transition: transform 0.3s ease; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    flex-shrink: 0; /* Impede que os cards encolham */
-    background: transparent; /* Fundo transparente */
+    flex-shrink: 0; 
+    background: transparent; 
     margin-top: 1%;
     margin-left: auto;
     margin-right: auto;
-    overflow: hidden; /* Impede o conteúdo de sair do card */
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden; 
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); 
 }
 
 /* Efeito de hover nos cards */
 .projeto-item:hover {
-    transform: scale(1.05); /* Aumenta o card ao passar o mouse */
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Aumenta a sombra no hover */
+    transform: scale(1.05); 
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); 
 }
 
 /* Estilo para o título (header) */
 .projeto-item h3 {
-    font-size: 1.5vw; /* Tamanho maior e responsivo para o título */
-    color: #27BA06; /* Cor verde */
-    margin-bottom: 10px; /* Espaço entre o título e a linha separadora */
+    font-size: 1.5vw; 
+    color: #27BA06; 
+    margin-bottom: 10px; 
     width: 100%;
-    text-align: center; /* Centraliza o título */
-    border-bottom: 3px solid #27BA06; /* Linha separadora abaixo do título */
-    padding-bottom: 10px; /* Distância entre o texto e a linha */
-    text-transform: uppercase; /* Deixa o título em maiúsculas */
+    text-align: center; 
+    border-bottom: 3px solid #27BA06; 
+    padding-bottom: 10px; 
+    text-transform: uppercase; 
 }
 
 .projetos-card h2 {
@@ -146,21 +147,21 @@ nav ul li a:hover {
 /* Estilo para a descrição (body) */
 .projeto-item p {
     margin-top: 0;
-    font-size: 1.5vw; /* Ajuste do tamanho da descrição */
-    color: #3BCD09; /* Cor para o texto */
-    text-align: center; /* Centraliza o texto */
+    font-size: 1.5vw; 
+    color: #3BCD09; 
+    text-align: center; 
     line-height: 1.6;
-    word-wrap: break-word; /* Garante que o texto não ultrapasse o limite */
-    margin: 15px 0; /* Ajusta o espaço ao redor da descrição */
-    flex-grow: 1; /* Permite que a descrição ocupe o espaço restante no card */
+    word-wrap: break-word; 
+    margin: 15px 0; 
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza o texto */
-    padding: 0 10px; /* Adiciona espaço nas laterais */
-    overflow-y: auto; /* Permite o scroll vertical se necessário */
+    align-items: center; 
+    padding: 0 10px; 
+    overflow-y: auto; 
     margin-right: 1%;
-    scrollbar-width: thin; /* Torna a barra de rolagem mais fina */
-    scrollbar-color: transparent transparent; /* Torna a barra de rolagem invisível */
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent; 
 }
 
 /* Estilo para o footer (onde ficam as imagens) */
@@ -169,23 +170,23 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     width: 100%;
-    border-top: 3px solid #27BA06; /* Linha separadora acima das imagens */
+    border-top: 3px solid #27BA06; 
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
 /* Imagens no footer */
 .projeto-item .footer img {
-    margin: 0 5px; /* Espaço entre as imagens */
-    width: 50px; /* Tamanho das imagens */
-    height: 50px; /* Tamanho das imagens */
-    border-radius: 50%; /* Bordas arredondadas nas imagens */
-    transition: transform 0.3s ease; /* Animação de transformação nas imagens */
+    margin: 0 5px; 
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    transition: transform 0.3s ease; 
 }
 
 /* Efeito de hover nas imagens */
 .projeto-item .footer img:hover {
-    transform: scale(1.1); /* Aumenta as imagens ao passar o mouse */
+    transform: scale(1.1); 
 }
 
 /* Modal */
