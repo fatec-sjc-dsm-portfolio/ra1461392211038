@@ -50,18 +50,62 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    padding: 0 20px;
 }
 
-#inicio h1 {
-    font-size: 3rem;
+/* Contêiner para alinhar o texto e a imagem */
+.intro-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+/* Texto na Esquerda */
+.intro-text {
+    flex: 1;
+    text-align: left;
+}
+
+.intro-text h1 {
+    font-size: 4rem;
     color: white;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-#inicio p {
+.intro-text p {
     font-size: 1.5rem;
-    color: white;
+    color: #ddd;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
+
+/* Imagem na Direita */
+.intro-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 80vh;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    border-radius: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efeito de Hover na Imagem */
+.intro-image img:hover {
+    transform: scale(1.05);
+}
+
 
 /* Estilo da Seção Sobre Mim */
 #sobre {
