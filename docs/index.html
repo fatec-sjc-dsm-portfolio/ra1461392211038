@@ -1,12 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Portfólio de Jonatas Mathias</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Teste Portfólio imagem</h1>
-    <img src="./assets/minha_foto.png" alt="minha foto">
+    <!-- Menu Responsivo -->
+    <header>
+        <nav class="navbar">
+            <div class="menu-icon" id="menu-icon">&#9776;</div>
+            <ul class="nav-list" id="nav-list">
+                <li class="nav-item"><a href="#sobre">Sobre Mim</a></li>
+                <li class="nav-item"><a href="#projetos">Projetos</a></li>
+                <li class="nav-item"><a href="#certificacoes">Certificações</a></li>
+                <li class="nav-item"><a href="#contato">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção Inicial -->
+    <section id="inicio">
+        <div class="intro-text">
+            <h1>Jonatas Mathias</h1>
+            <p>Desenvolvedor de Software Multiplataforma</p>
+        </div>
+    </section>
+
+    <!-- Seção Sobre Mim -->
+    <section id="sobre">
+        <div class="conteudo-sobre">
+            <h2>Sobre Mim - Softskills/Hardskills</h2>
+        </div>
+    </section>
+
+    <section id="projetos" class="section">
+        <div class="projetos-card">
+            <h2>Projetos</h2>
+            <div class="projetos-container">
+                <!-- Cards de projetos serão inseridos dinamicamente -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modal -->
+    <div class="modal" id="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="Imagem do Projeto">
+                <div class="modal-text">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-description"></p>
+                    <button id="close-modal-btn">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    
+
+    <!-- Seção Certificações -->
+    <section id="certificacoes">
+        <h2>Certificações</h2>
+        <div class="certificacoes-lista">
+            <div class="certificado">
+            </div>
+            <!-- Adicione mais certificados conforme necessário -->
+        </div>
+    </section>
+
+    <!-- Seção Contatos -->
+    <section id="contato">
+        <h2>Contato</h2>
+        <form action="#">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Jonatas Mathias</p>
+    </footer>
 </body>
+
 </html>

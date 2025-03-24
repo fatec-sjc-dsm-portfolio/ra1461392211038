@@ -1,0 +1,444 @@
+/* Resetando margens e padding para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para o Body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #121212;
+}
+
+/* Estilo do Header e Menu */
+header {
+    color: white;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #4EE00C;
+}
+
+/* Estilo para a Seção Inicial */
+#inicio {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#inicio h1 {
+    font-size: 3rem;
+    color: white;
+}
+
+#inicio p {
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* Estilo da Seção Sobre Mim */
+#sobre {
+    padding: 50px;
+    color: white;
+}
+
+.conteudo-sobre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.conteudo-sobre img {
+    border-radius: 50%;
+    width: 150px;
+    margin-right: 30px;
+}
+
+/* Seção de Projetos */
+/* Estilos para o layout de projetos */
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 projetos por linha */
+    gap: 20px;
+    width: 100%; /* Garantir que a largura ocupe 100% */
+    margin-left: auto; /* Centraliza os itens */
+    margin-right: auto; /* Centraliza os itens */
+    padding: 0 20px; /* Adiciona padding interno para o contêiner */
+}
+
+.projeto-item {
+    width: 100%; /* Garante que o card ocupe 100% da largura disponível na grid */
+    max-width: 80%; /* Limita a largura máxima do card */
+    min-height: 300px; /* Define uma altura mínima para os cards */
+    height: auto; /* Deixa a altura do card dinâmica, dependendo do conteúdo */
+    border: 3px solid #27BA06; /* Borda com a cor de destaque */
+    border-radius: 10px; /* Bordas arredondadas */
+    background-color: #fff; /* Fundo branco */
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Animação de aumento ao passar o mouse */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0; /* Impede que os cards encolham */
+    background: transparent; /* Fundo transparente */
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden; /* Impede o conteúdo de sair do card */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Efeito de hover nos cards */
+.projeto-item:hover {
+    transform: scale(1.05); /* Aumenta o card ao passar o mouse */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Aumenta a sombra no hover */
+}
+
+/* Estilo para o título (header) */
+.projeto-item h3 {
+    font-size: 1.5vw; /* Tamanho maior e responsivo para o título */
+    color: #27BA06; /* Cor verde */
+    margin-bottom: 10px; /* Espaço entre o título e a linha separadora */
+    width: 100%;
+    text-align: center; /* Centraliza o título */
+    border-bottom: 3px solid #27BA06; /* Linha separadora abaixo do título */
+    padding-bottom: 10px; /* Distância entre o texto e a linha */
+    text-transform: uppercase; /* Deixa o título em maiúsculas */
+}
+
+.projetos-card h2 {
+    color: #3BCD09; /* Verde destacado */
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Estilo para a descrição (body) */
+.projeto-item p {
+    margin-top: 0;
+    font-size: 1.5vw; /* Ajuste do tamanho da descrição */
+    color: #3BCD09; /* Cor para o texto */
+    text-align: center; /* Centraliza o texto */
+    line-height: 1.6;
+    word-wrap: break-word; /* Garante que o texto não ultrapasse o limite */
+    margin: 15px 0; /* Ajusta o espaço ao redor da descrição */
+    flex-grow: 1; /* Permite que a descrição ocupe o espaço restante no card */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o texto */
+    padding: 0 10px; /* Adiciona espaço nas laterais */
+    overflow-y: auto; /* Permite o scroll vertical se necessário */
+    margin-right: 1%;
+    scrollbar-width: thin; /* Torna a barra de rolagem mais fina */
+    scrollbar-color: transparent transparent; /* Torna a barra de rolagem invisível */
+}
+
+/* Estilo para o footer (onde ficam as imagens) */
+.projeto-item .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-top: 3px solid #27BA06; /* Linha separadora acima das imagens */
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Imagens no footer */
+.projeto-item .footer img {
+    margin: 0 5px; /* Espaço entre as imagens */
+    width: 50px; /* Tamanho das imagens */
+    height: 50px; /* Tamanho das imagens */
+    border-radius: 50%; /* Bordas arredondadas nas imagens */
+    transition: transform 0.3s ease; /* Animação de transformação nas imagens */
+}
+
+/* Efeito de hover nas imagens */
+.projeto-item .footer img:hover {
+    transform: scale(1.1); /* Aumenta as imagens ao passar o mouse */
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #121212;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid #27BA06;
+    color: #3BCD09;
+}
+
+.modal-body {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+/* Imagem do modal */
+#modal-image {
+    max-width: 40%;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #3BCD09;
+    object-fit: cover;
+}
+
+/* Texto do modal */
+.modal-text {
+    flex: 1;
+    text-align: left;
+}
+
+/* Botão fechar */
+#close-modal-btn {
+    background-color: #121212;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #0D7F53;
+    border: 3px solid #3BCD09;
+    margin-top: 15px;
+}
+
+#close-modal-btn:hover {
+    color: #3BCD09;
+    border: 3px solid #3BCD09;
+}
+
+
+/* Seção de Certificações */
+#certificacoes {
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+
+.certificacoes-lista {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.certificado img {
+    width: 100px;
+    height: 100px;
+}
+
+/* Seção de Contato */
+#contato {
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input,
+form textarea {
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #121212;
+    border: 3px solid #009400;
+    color: #009400;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    color: #4EE00C;
+    border: 3px solid #4EE00C;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #121212;
+    color: white;
+}
+
+/* Customização da Barra Lateral */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+    /* Faz a barra lateral rolar se o conteúdo for grande */
+}
+
+/* Scroll personalizado */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 100%;
+}
+
+::-webkit-scrollbar-track {
+    background-image: linear-gradient(to bottom, #32b008, #1f9405, #0D7F53);
+    border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4EE00C;
+    border-radius: 25px;
+}
+
+/* NAVBAR */
+/* Estilos gerais */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #121212;
+    background: transparent 0.5;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000; /* Garantir que a navbar fique acima do conteúdo */
+    border-bottom: 2px solid #27BA06;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-item.active {
+    color: white;
+}
+
+.nav-item:hover {
+    color: #4EE00C;
+    /* Cor verde apenas ao passar o mouse */
+}
+
+/* Menu "hamburger" oculto em telas menores */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+}
+
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    .navbar {
+        border-bottom: none;
+        padding: 0;
+    }
+
+    .menu-icon {
+        display: block;
+        border: 2px solid #27BA06;
+        border-radius: 10px;
+        padding: 10px;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        background-color: black;
+        width: 60px;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        background-color: black;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 80%;
+        text-align: right;
+        padding: 0;
+        border: 2px solid #27BA06;
+        border-radius: 10px;
+    }
+
+    .nav-list.open {
+        display: flex;
+    }
+
+    .nav-item {
+        padding: 15px 20px;
+        font-size: 20px;
+        border-bottom: 1px solid #27BA06;
+    }
+
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+}
