@@ -1,4 +1,3 @@
-/* Resetando margens e padding para todos os elementos */
 * {
     margin: 0;
     padding: 0;
@@ -12,253 +11,344 @@ body {
     background-color: #121212;
 }
 
-/* Estilo do Header e Menu */
 header {
-    color: white;
-    padding: 10px 0;
-    position: sticky;
+    white-space: nowrap;
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 300px;
+    background-color: #121212c4;
+    z-index: 1000;
+    border-bottom: 1px solid #444;
 }
 
 /* Estilo para a Seção Inicial */
-#inicio {
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
+/* Estilo para a seção "Sobre Mim" */
+/* Estilo para a seção "Sobre Mim" */
+.motion {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
+    height: 100vh;
+    background-color: #121212;
+    /* Cor de fundo da seção */
 }
 
-/* Contêiner para alinhar o texto e a imagem */
-.intro-content {
+.inicio {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 80%;
+    /* Define o espaço da seção */
     max-width: 1200px;
-    gap: 20px;
+    padding: 20px;
 }
 
-/* Texto na Esquerda */
-.intro-text {
+.inicio .content {
     flex: 1;
     text-align: left;
+    padding: 20px;
 }
 
-.intro-text h1 {
-    font-size: 4rem;
-    color: white;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+.inicio h2 {
+    font-size: 2.5rem;
+    color: #27BA06;
+    /* Texto branco */
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
 }
 
-.intro-text p {
+.inicio .role {
     font-size: 1.5rem;
-    color: #ddd;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    color: #009400;
+    /* Texto branco */
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
-/* Efeito de Hover na Imagem */
-.intro-image img:hover {
-    transform: scale(1.05);
+.inicio #dynamic-text {
+    font-weight: normal;
+    color: #4EE00C;
+    /* Cor verde para o texto dinâmico */
 }
 
+.inicio .cursor {
+    font-weight: bold;
+    color: #4EE00C;
+    /* Cor do cursor */
+}
+
+.inicio p {
+    font-size: 1rem;
+    color: #4EE00C;
+    /* Texto mais claro */
+    line-height: 1.5;
+}
+
+.inicio .photos {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicio .photos img {
+    width: 400px;
+    /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto;
+    border-radius: 50%;
+    /* Deixa a imagem em formato circular */
+    border: 7px solid transparent;
+    /* Necessário para aplicar a border-image */
+    background-image: linear-gradient(45deg, #009400, #0D7F53, #27BA06, #4EE00C);
+    /* Gradiente de verde */
+    background-size: 400% 400%;
+    /* Faz o gradiente ocupar mais área para o movimento */
+    animation: gradient-border 4s linear infinite;
+    /* Animação para mover o gradiente */
+}
+
+/* Animação do gradiente para criar o movimento */
+@keyframes gradient-border {
+    0% {
+        background-position: 100% 0%;
+    }
+
+    50% {
+        background-position: 0% 100%;
+    }
+
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+/* Efeito de transição no cursor (para simular um cursor piscando) */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.inicio .cursor {
+    animation: blink 0.8s infinite;
+}
 
 /* Estilo da Seção Sobre Mim */
 #sobre {
-    padding: 50px;
-    color: white;
-}
-
-.conteudo-sobre {
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
-.conteudo-sobre img {
-    border-radius: 50%;
-    width: 150px;
-    margin-right: 30px;
+.card-sobre {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #27BA06;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 30px auto;
+    width: 80%;
+    height: 500px;
+    background-color: #121212;
+}
+
+/* Div da Imagem */
+.card-imagem {
+    flex: 1;
+    width: 100%;
+    height: calc(100% - 80px); /* Reserva espaço para os botões embaixo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Div dos botões */
+.botoes-sobre {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212c4;
+    gap: 10px;
+}
+
+/* Botões */
+.botao-sobre {
+    border: 3px solid #0D7F53;
+    background-color: #121212c4;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #0D7F53;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Botão ao passar o mouse */
+.botao-sobre:hover {
+    border-color: #4EE00C;
+    color: #4EE00C;
+}
+
+/* Botão ativo */
+.botao-sobre.ativo {
+    transform: scale(1.1);
+    border-color: #4EE00C;
+    color: #4EE00C;
+    background-color: #1b1b1b;
 }
 
 /* Seção de Projetos */
 /* Estilos para o layout de projetos */
-.projetos-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 projetos por linha */
-    gap: 20px;
-    width: 100%; 
-    margin-left: auto; 
-    margin-right: auto; 
-    padding: 0 20px;
-}
-
-.projeto-item {
-    width: 100%; 
-    max-width: 80%; 
-    min-height: 300px; 
-    max-height: 500px;
-    height: auto; 
-    border: 3px solid #27BA06; 
-    border-radius: 10px; 
-    background-color: #fff; 
-    cursor: pointer;
-    transition: transform 0.3s ease; 
+.carrossel-container {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    flex-shrink: 0; 
-    background: transparent; 
-    margin-top: 1%;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden; 
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); 
-}
-
-/* Efeito de hover nos cards */
-.projeto-item:hover {
-    transform: scale(1.05); 
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); 
-}
-
-/* Estilo para o título (header) */
-.projeto-item h3 {
-    font-size: 1.5vw; 
-    color: #27BA06; 
-    margin-bottom: 10px; 
+    justify-content: center;
+    position: relative;
     width: 100%;
-    text-align: center; 
-    border-bottom: 3px solid #27BA06; 
-    padding-bottom: 10px; 
-    text-transform: uppercase; 
+    margin-top: 20px;
+}
+
+.carrossel-wrapper {
+    width: 80%;
+    overflow: hidden;
+}
+
+.carrossel {
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
 .projetos-card h2 {
-    color: #3BCD09; /* Verde destacado */
+    color: #27BA06;
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 20px;
     text-transform: uppercase;
 }
 
-/* Estilo para a descrição (body) */
-.projeto-item p {
-    margin-top: 0;
-    font-size: 1.5vw; 
-    color: #3BCD09; 
-    text-align: center; 
-    line-height: 1.6;
-    word-wrap: break-word; 
-    margin: 15px 0; 
-    flex-grow: 1; 
+/* Card do Projeto */
+.projeto-item {
+    width: 95%;
+    flex: 0 0 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: 3px solid #27BA06;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    background: transparent;
+    height: 500px;
+}
+
+.projeto-imagem {
+    width: 45%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    padding: 0 10px; 
-    overflow-y: auto; 
-    margin-right: 1%;
-    scrollbar-width: thin; 
-    scrollbar-color: transparent transparent; 
-}
-
-/* Estilo para o footer (onde ficam as imagens) */
-.projeto-item .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    border-top: 3px solid #27BA06; 
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-/* Imagens no footer */
-.projeto-item .footer img {
-    margin: 0 5px; 
-    width: 50px; 
-    height: 50px; 
-    border-radius: 50%; 
-    transition: transform 0.3s ease; 
-}
-
-/* Efeito de hover nas imagens */
-.projeto-item .footer img:hover {
-    transform: scale(1.1); 
-}
-
-/* Modal */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    background-color: #121212;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 80%;
-    max-height: 80%;
-    overflow-y: auto;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border: 3px solid #27BA06;
-    color: #3BCD09;
-}
-
-.modal-body {
-    display: flex;
-    gap: 20px;
-    flex-direction: row;
     align-items: flex-start;
+    /* Alinha a imagem ao topo */
+    justify-content: flex-start;
+    /* Começa do topo */
+    overflow: hidden;
+    padding: 0;
+    /* sem espaço desnecessário */
+    box-sizing: border-box;
 }
 
-/* Imagem do modal */
-#modal-image {
-    max-width: 40%;
+.projeto-imagem img {
+    width: 100%;
     height: auto;
+    /* Altura automática proporcional */
+    max-height: 100%;
+    /* Nunca estoura a altura do card */
+    object-fit: contain;
+    /* Mantém proporção sem corte */
     border-radius: 10px;
-    border: 3px solid #3BCD09;
-    object-fit: cover;
+    border: 3px solid #27BA06;
+    /* A borda agora vai certinha na imagem */
+    box-sizing: border-box;
 }
 
-/* Texto do modal */
-.modal-text {
-    flex: 1;
-    text-align: left;
+/* Texto do projeto */
+.projeto-texto {
+    width: 53%;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+    height: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #3BCD09 transparent;
 }
 
-/* Botão fechar */
-#close-modal-btn {
-    background-color: #121212;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #0D7F53;
-    border: 3px solid #3BCD09;
-    margin-top: 15px;
+.projeto-texto::-webkit-scrollbar {
+    width: 6px;
 }
 
-#close-modal-btn:hover {
+.projeto-texto::-webkit-scrollbar-thumb {
+    background-color: #3BCD09;
+    border-radius: 10px;
+}
+
+.projeto-texto h3 {
+    font-size: 1.5vw;
+    color: #27BA06;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.projeto-texto p {
+    font-size: 1vw;
     color: #3BCD09;
-    border: 3px solid #3BCD09;
+    line-height: 1.5;
+    text-align: justify;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
+/* Botões de navegação */
+.carrossel-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 2.5rem;
+    color: #3BCD09;
+    cursor: pointer;
+    z-index: 10;
+    height: 400px;
+    /* mesma altura dos cards */
+    display: flex;
+    align-items: center;
+}
+
+.carrossel-btn:hover {
+    color: #27BA06;
+}
 
 /* Seção de Certificações */
 #certificacoes {
@@ -279,39 +369,83 @@ header {
 }
 
 /* Seção de Contato */
-#contato {
-    padding: 50px;
+.contact-section {
+    max-width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    height: auto;
+}
+
+.contact-title {
     text-align: center;
-    color: white;
+    margin-bottom: 30px;
+    color: #3BCD09;
+    font-size: 2rem;
 }
 
-form {
+.contact-card {
+    border: 3px solid #27BA06;
+    /* Borda verde */
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+    background-image: url('assets/background/background.png');
+    /* Adicione sua imagem aqui */
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    position: relative;
+}
+
+.contact-items {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: relative;
+}
+
+.contact-item {
+    display: flex;
     align-items: center;
+    min-width: 150px;
+    margin: 5px 0;
+    padding: 5px;
+    transition: transform 0.3s ease;
 }
 
-form input,
-form textarea {
-    width: 300px;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+.contact-item:hover {
+    transform: scale(1.15);
 }
 
-form button {
-    padding: 10px 20px;
-    background-color: #121212;
-    border: 3px solid #009400;
-    color: #009400;
-    border-radius: 5px;
-    cursor: pointer;
+.contact-icon {
+    width: 60px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 50%;
 }
 
-form button:hover {
-    color: #4EE00C;
-    border: 3px solid #4EE00C;
+.contact-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-text {
+    font-size: 1.2rem;
+    color: #3BCD09;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contact-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-item {
+        justify-content: center;
+        text-align: center;
+    }
 }
 
 /* Footer */
@@ -321,6 +455,7 @@ footer {
     background-color: #121212;
     color: white;
 }
+
 
 /* Customização da Barra Lateral */
 .sidebar {
@@ -358,12 +493,13 @@ footer {
     right: 0;
     width: 100%;
     background-color: #121212;
-    background: transparent 0.5;
+    /* Fundo sólido */
     color: white;
     text-align: center;
     padding: 10px 0;
-    z-index: 1000; /* Garantir que a navbar fique acima do conteúdo */
     border-bottom: 2px solid #27BA06;
+    z-index: 1000;
+    /* Para garantir que fique acima dos outros conteúdos */
 }
 
 nav ul {
@@ -389,10 +525,10 @@ nav ul li a:hover {
 
 .nav-list {
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-end;
     list-style-type: none;
     margin: 0;
-    padding: 0 20px; 
+    padding: 0 20px;
 }
 
 .nav-item {
@@ -466,5 +602,23 @@ nav ul li a:hover {
 
     .nav-item:last-child {
         border-bottom: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .projeto-item {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .projeto-imagem {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .projeto-texto {
+        width: 100%;
+        height: auto;
     }
 }
