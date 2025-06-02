@@ -34,7 +34,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    
     background-color: #121212;
 }
 
@@ -163,7 +163,7 @@ header {
 /* Faz o <p> ter altura automática e ocupa o resto do espaço */
 .texto-com-linha p {
     margin: 0;
-    line-height: 1.8;
+    
     color: #27BA06;
     font-size: clamp(0.5rem, 3vw, 1.2rem);
     max-width: 90%;
@@ -207,7 +207,7 @@ header {
 
 .texto-com-linha2 p {
     margin: 0;
-    line-height: 1.8;
+    
     color: #27BA06;
     font-size: clamp(0.5rem, 3vw, 1.2rem);
     max-width: 90%;
@@ -248,7 +248,7 @@ header {
 /* Faz o <p> ter altura automática e ocupa o resto do espaço */
 .texto-com-linha3 p {
     margin: 0;
-    line-height: 1.8;
+    
     color: #27BA06;
     font-size: clamp(0.5rem, 2.5vw, 1.2rem);
     max-width: 90%;

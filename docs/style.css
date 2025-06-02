@@ -216,7 +216,6 @@ body {
 /* Faz o <p> ter altura automática e ocupa o resto do espaço */
 .texto-com-linha p {
     margin: 0;
-    line-height: 1.8;
     color: #27BA06;
     font-size: clamp(0.5rem, 3vw, 1.2rem);
     max-width: 90%;
@@ -260,7 +259,6 @@ body {
 
 .texto-com-linha2 p {
     margin: 0;
-    line-height: 1.8;
     color: #27BA06;
     font-size: clamp(0.5rem, 3vw, 1.2rem);
     max-width: 90%;
@@ -301,7 +299,6 @@ body {
 /* Faz o <p> ter altura automática e ocupa o resto do espaço */
 .texto-com-linha3 p {
     margin: 0;
-    line-height: 1.8;
     color: #27BA06;
     font-size: clamp(0.5rem, 3vw, 1.2rem);
     max-width: 90%;
