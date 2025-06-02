@@ -16,7 +16,7 @@ body {
 
 
 /* ======================= */
-/* SEÇÃO INICIAL           */
+/* SEÇÃO INICIAL FIXADA    */
 /* ======================= */
 .motion {
     display: flex;
@@ -24,56 +24,51 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #121212;
+    padding: 20px;
 }
 
 .inicio {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 90%;
+    max-width: 1300px;
+    flex-wrap: nowrap; /* Mantém lado a lado */
+    gap: 20px;
 }
 
 .inicio .content {
-    flex: 1;
+    flex: 2; 
     text-align: left;
-    padding: 20px;
+    padding: 10px;
+    min-width: 0;
 }
 
 .inicio h2 {
-    font-size: 2.5rem;
+    font-size: clamp(0.4rem, 3vw, 2.5rem);
     color: #4EE00C;
     font-family: 'Arial', sans-serif;
 }
 
-.inicio .role {
-    font-size: 1.5rem;
-    color: #A8FF7A;
-    font-weight: bold;
-}
-
-.inicio #dynamic-text {
-    font-weight: normal;
-    color: #A8FF7A;
-    font-weight: bold;
-}
-
+.inicio .role,
+.inicio #dynamic-text,
 .inicio .cursor {
-    font-weight: bold;
+    font-size: clamp(0.4rem, 2.5vw, 1.5rem);
     color: #A8FF7A;
     font-weight: bold;
 }
 
 .inicio p {
-    font-size: 1rem;
+    font-size: clamp(0.4rem, 2vw, 1rem);
     color: #A8FF7A;
     font-weight: bold;
-    line-height: 1.5;
+
 }
 
 .inicio h3 {
-    font-size: 2rem;
+    font-size: clamp(0.6rem, 3vw, 2rem);
     color: #4EE00C;
-    margin-bottom: 20px;
+
     font-family: 'Arial', sans-serif;
 }
 
@@ -85,10 +80,11 @@ body {
 }
 
 .inicio .photos img {
-    width: 400px;
+    width: clamp(120px, 35vw, 400px);
     height: auto;
     border-radius: 50%;
-    border: 8px solid transparent;
+    border: solid transparent; 
+    border-width: clamp(1px, 1.5vw, 5px);
     background-image: linear-gradient(45deg, #009400, #0D7F53, #27BA06, #4EE00C);
     background-size: 400% 400%;
     animation: gradient-border 4s linear infinite;
@@ -129,107 +125,36 @@ body {
 /* ======================= */
 /* RESPONSIVIDADE          */
 /* ======================= */
-@media (max-width: 1024px) {
-     .motion {
-        align-items: flex-start;
-        padding-top: 100px; 
-        padding-bottom: 50px; 
-        height: auto;
-    }
-    .inicio {
-        width: 90%;
-    }
-
-    .inicio h2 {
-        font-size: 2.2rem;
-    }
-
-    .inicio h3 {
-        font-size: 1.8rem;
-    }
-
-    .inicio .role {
-        font-size: 1.3rem;
-    }
-
-    .inicio p {
-        font-size: 1rem;
-    }
-
-    .inicio .photos img {
-        width: 320px;
-    }
-}
-
 @media (max-width: 768px) {
-     .motion {
-        align-items: flex-start;
-        padding-top: 100px; 
-        padding-bottom: 50px; 
+    .motion {
         height: auto;
+        padding-top: 80px;
     }
+
     .inicio {
-        flex-direction: column;
-        text-align: center;
+        gap: 10px;
     }
 
     .inicio .content {
         padding: 10px;
     }
-
-    .inicio h2 {
-        font-size: 2rem;
-    }
-
-    .inicio h3 {
-        font-size: 1.5rem;
-    }
-
-    .inicio .role {
-        font-size: 1.2rem;
-    }
-
-    .inicio p {
-        font-size: 0.9rem;
-    }
-
-    .inicio .photos {
-        margin-top: 20px;
-    }
-
-    .inicio .photos img {
-        width: 250px;
-    }
 }
 
 @media (max-width: 480px) {
-     .motion {
-        align-items: flex-start;
-        padding-top: 100px; 
-        padding-bottom: 50px; 
+    .motion {
         height: auto;
-    }
-    .inicio h2 {
-        font-size: 1.8rem;
-    }
-
-    .inicio h3 {
-        font-size: 1.3rem;
+        padding-top: 80px;
+        padding-bottom: 10px;
     }
 
-    .inicio .role {
-        font-size: 1rem;
+    .inicio {
+        gap: 5px;
     }
 
-    .inicio p {
-        font-size: 0.85rem;
-    }
-
-    .inicio .photos img {
-        width: 200px;
+    .inicio .content {
+        padding: 5px;
     }
 }
-
 
 /* ======================= */
 /* SEÇÃO SOBRE MIM         */
@@ -247,7 +172,7 @@ body {
 }
 
 .titulo-sobre h2 {
-    font-size: clamp(2.4rem, 3.5vw, 3.5rem);
+    font-size: clamp(1.4rem, 3.5vw, 3.5rem);
     color: #4EE00C;
     
 }
