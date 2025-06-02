@@ -172,7 +172,7 @@ body {
 }
 
 .titulo-sobre h2 {
-    font-size: clamp(1.4rem, 3.5vw, 3.5rem);
+    font-size: clamp(2.4rem, 3.5vw, 3.5rem);
     color: #4EE00C;
     
 }
