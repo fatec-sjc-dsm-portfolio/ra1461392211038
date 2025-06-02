@@ -24,7 +24,7 @@ function updateCarrossel() {
     carrossel.style.transform = `translateX(${translateX}%)`;
 }
 
-const texts = ["Back-end", "Front-end"];
+const texts = ["Fullstack", "Back-end", "Front-end"];
 const dynamicText = document.getElementById("dynamic-text");
 const cursor = document.getElementById("cursor");
 
@@ -57,22 +57,3 @@ typeText(texts[index], 0, () => {
   // Uma vez que a primeira palavra foi digitada, inicia a troca
   changeText();
 });
-
-function trocarConteudo(tipo) {
-  const imagem = document.getElementById('imagem-card');
-  const botoes = document.querySelectorAll('.botao-sobre');
-
-  // Atualizar imagem conforme o botão clicado
-  if (tipo === 'resumo') {
-    imagem.src = 'assets/img/demon1.png'; // Coloque o caminho da imagem do resumo
-  } else if (tipo === 'objetivo') {
-    imagem.src = 'assets/img/demon2.png'; // Coloque o caminho da imagem do objetivo
-  } else if (tipo === 'hobbies') {
-    imagem.src = 'assets/img/demon3.png'; // Coloque o caminho da imagem dos hobbies
-  }
-
-  // Atualizar estilos dos botões
-  botoes.forEach(botao => botao.classList.remove('ativo'));
-  const botaoAtivo = Array.from(botoes).find(btn => btn.textContent.toLowerCase() === tipo);
-  if (botaoAtivo) botaoAtivo.classList.add('ativo');
-}

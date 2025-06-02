@@ -15,6 +15,8 @@
             <div class="menu-icon" id="menu-icon">&#9776;</div>
             <ul class="nav-list" id="nav-list">
                 <li class="nav-item"><a href="#sobre">Sobre Mim</a></li>
+                <li class="nav-item"><a href="#softskills">Software Skills</a></li>
+                <li class="nav-item"><a href="#hardwareskills">Hardware Skills</a></li>
                 <li class="nav-item"><a href="#projetos">Projetos</a></li>
                 <!--<li class="nav-item"><a href="#certificacoes">Certificações</a></li>-->
                 <li class="nav-item"><a href="#contatos">Contatos</a></li>
@@ -29,7 +31,7 @@
                 <h2>Bem Vindo! Eu sou Jonatas</h2>
                 <p class="role">Desenvolvedor <span id="dynamic-text"></span><span id="cursor" class="cursor">|</span>
                 </p>
-                <h2>E esse é meu Portfolio!</h2>
+                <h3>E esse é meu Portfolio!</h2>
             </div>
             <div class="photos">
                 <img src="assets/img/foto-minha.jpg" alt="minha foto">
@@ -40,22 +42,101 @@
 
     <!-- Seção Sobre Mim -->
     <section id="sobre">
-        <div class="card-sobre">
-          <div class="card-imagem">
-            <img id="imagem-card" src="resumo.jpg" alt="Imagem Sobre Mim">
-          </div>
-          <div class="botoes-sobre">
-            <button class="botao-sobre ativo" onclick="trocarConteudo('resumo')">Sobre Mim</button>
-            <button class="botao-sobre" onclick="trocarConteudo('objetivo')">Software Skills</button>
-            <button class="botao-sobre" onclick="trocarConteudo('hobbies')">Hardware Skills</button>
-          </div>
+        <div class="conteudo-sobre">
+            <div class="titulo-sobre">
+                <h2>Sobre mim</h2>
+            </div>
+            <div class="texto-sobre">
+                <div class="texto-com-linha">
+                    <div class="linha-verde"></div>
+                    <p>Sou um entusiasta de tecnologia com interesse em desenvolvimento
+                        de software e experiência em metodologias ágeis. Tenho perfil focado, proativo e orientado a
+                        desafios, buscando evolução contínua.
+                        Ao longo da minha trajetória, participei de projetos diversos, utilizando
+                        diferentes linguagens de programação. Busco uma oportunidade de
+                        estágio para aplicar e expandir meus conhecimentos profissionais,
+                        contribuindo com o time e crescendo junto dele.</p>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-    <!-- Seção Softskills/Hardskills 
-    <section id="Softskills/Hardskills">
-        <div class="conteudo-Softskills/Hardskills">
-            <h2>Softskills/Hardskills</h2>
+    <section id="softskills">
+        <div class="conteudo-softskills">
+            <div class="titulo-softskills">
+                <h2>Softwares Skills</h2>
+            </div>
+            <div class="texto-softskills">
+                <div class="texto-com-linha2">
+                    <p>Sou um entusiasta de tecnologia com interesse em desenvolvimento
+                        de software e experiência em metodologias ágeis. Tenho perfil focado, proativo e orientado a
+                        desafios, buscando evolução contínua.
+                        Ao longo da minha trajetória, participei de projetos diversos, utilizando
+                        diferentes linguagens de programação. Busco uma oportunidade de
+                        estágio para aplicar e expandir meus conhecimentos profissionais,
+                        contribuindo com o time e crescendo junto dele.</p>
+                    <div class="linha-verde"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hardwareskills">
+        <div class="conteudo-hardwareskills">
+            <div class="titulo-hardwareskills">
+                <h2>Hardware Skills</h2>
+            </div>
+            <div class="texto-hardwareskills">
+                <div class="texto-com-linha3">
+                    <div class="linha-verde"></div>
+                    <p>Tenho experiência prática com montagem e manutenção de computadores, configuração de redes
+                        locais, instalação de sistemas operacionais e periféricos, além de conhecimentos em eletrônica
+                        básica e troubleshooting de hardware. Já participei de projetos envolvendo Arduíno e sensores,
+                        realizando integração entre hardware e software para soluções específicas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--<section id="projetos" class="section">
+        <h2 class="titulo-secao">Projetos</h2>
+        <div class="grid-projetos">
+            <div class="card-projeto">
+                <a href="projeto1.html">
+                    <img src="imagens/projeto1.png" alt="Projeto 1">
+                    <h3>Projeto 1</h3>
+                </a>
+            </div>
+            <div class="card-projeto">
+                <a href="projeto2.html">
+                    <img src="imagens/projeto2.png" alt="Projeto 2">
+                    <h3>Projeto 2</h3>
+                </a>
+            </div>
+            <div class="card-projeto">
+                <a href="projeto3.html">
+                    <img src="imagens/projeto3.png" alt="Projeto 3">
+                    <h3>Projeto 3</h3>
+                </a>
+            </div>
+            <div class="card-projeto">
+                <a href="projeto4.html">
+                    <img src="imagens/projeto4.png" alt="Projeto 4">
+                    <h3>Projeto 4</h3>
+                </a>
+            </div>
+            <div class="card-projeto">
+                <a href="projeto5.html">
+                    <img src="imagens/projeto5.png" alt="Projeto 5">
+                    <h3>Projeto 5</h3>
+                </a>
+            </div>
+            <div class="card-projeto">
+                <a href="projeto6.html">
+                    <img src="imagens/projeto6.png" alt="Projeto 6">
+                    <h3>Projeto 6</h3>
+                </a>
+            </div>
         </div>
     </section>-->
 
@@ -67,7 +148,6 @@
 
                 <div class="carrossel-wrapper">
                     <div class="carrossel" id="carrossel">
-                        <!-- Cada projeto será um item -->
                         <div class="projeto-item">
                             <div class="projeto-texto">
                                 <h3>Projeto Integrador - Central de Serviços (2022.1)</h3>
@@ -204,16 +284,6 @@
     </section>
     <script src="script.js"></script>
 
-
-    <!-- Seção Certificações 
-    <section id="certificacoes">
-        <h2>Certificações</h2>
-        <div class="certificacoes-lista">
-            <div class="certificado">
-            </div>
-        </div>
-    </section>-->
-
     <!-- Seção Contatos -->
     <section id="contatos" class="contact-section">
         <div class="contact-card">
@@ -240,16 +310,16 @@
                     <img src="assets/icons/email.png" alt="Email" class="contact-icon">
                     <span class="contact-text">Email</span>
                 </div>
-                
+
                 <script>
-                function copyEmail() {
-                    const email = "jonatasmathiasdallo@gmail.com";
-                    navigator.clipboard.writeText(email).then(function() {
-                        alert("Você copiou o email " + email);
-                    }, function(err) {
-                        console.error('Erro ao copiar email: ', err);
-                    });
-                }
+                    function copyEmail() {
+                        const email = "jonatasmathiasdallo@gmail.com";
+                        navigator.clipboard.writeText(email).then(function () {
+                            alert("Você copiou o email " + email);
+                        }, function (err) {
+                            console.error('Erro ao copiar email: ', err);
+                        });
+                    }
                 </script>
 
                 <!-- Discord -->
@@ -264,10 +334,10 @@
     </section>
     <script src="a.js"></script>
 
-
-    <footer>
-        <p>© 2025 Jonatas Mathias</p>
-    </footer>
 </body>
+
+<footer>
+    <p>© 2025 Jonatas Mathias</p>
+</footer>
 
 </html>
