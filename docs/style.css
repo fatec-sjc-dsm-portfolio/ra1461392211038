@@ -16,94 +16,6 @@ body {
 
 
 /* ======================= */
-/* HEADER / NAVBAR         */
-/* ======================= */
-header {
-    white-space: nowrap;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 300px;
-    background-color: #121212c4;
-    z-index: 1000;
-    border-bottom: 1px solid #444;
-}
-
-/* ---- NAVBAR PRINCIPAL ---- */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 70px;
-    background-color: #121212;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    border-bottom: 2px solid #27BA06;
-    z-index: 1000;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-    color: #4EE00C;
-}
-
-.nav-list {
-    display: flex;
-    justify-content: flex-end;
-    list-style-type: none;
-    margin: 0;
-    padding: 0 20px;
-}
-
-.nav-item {
-    cursor: pointer;
-    color: white;
-    font-size: 18px;
-    padding: 10px;
-    transition: color 0.3s ease-in-out;
-}
-
-.nav-item.active {
-    color: white;
-}
-
-.nav-item:hover {
-    color: #4EE00C;
-}
-
-.menu-icon {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-    color: white;
-}
-
-
-/* ======================= */
 /* SEÇÃO INICIAL           */
 /* ======================= */
 .motion {
@@ -335,7 +247,7 @@ nav ul li a:hover {
 }
 
 .titulo-sobre h2 {
-    font-size: clamp(3rem, 1.5vw, 1.1rem);
+    font-size: clamp(2.4rem, 3.5vw, 3.5rem);
     color: #4EE00C;
     
 }
@@ -438,7 +350,7 @@ nav ul li a:hover {
 }
 
 .titulo-softskills h2 {
-    font-size: clamp(3rem, 1.5vw, 1.1rem);
+    font-size: clamp(2.4rem, 3.5vw, 3.5rem);
     color: #4EE00C;
     margin: 0;
     text-align: right;
@@ -537,7 +449,7 @@ nav ul li a:hover {
 }
 
 .titulo-hardwareskills h2 {
-    font-size: clamp(3rem, 1.5vw, 1.1rem);
+    font-size: clamp(2.4rem, 3.5vw, 3.5rem);
     color: #4EE00C;
     
 }
@@ -625,13 +537,13 @@ nav ul li a:hover {
 .conteudo-projetos {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .titulo-secao {
-    font-size: clamp(3rem, 1.5vw, 1.1rem);
+    font-size: clamp(2.4rem, 3.5vw, 3.5rem);
     margin-bottom: 30px;
     color: #4EE00C;
 }
@@ -735,8 +647,8 @@ nav ul li a:hover {
 .contact-title {
     text-align: center;
     margin-bottom: 30px;
-    color: #3BCD09;
-    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: #4EE00C;
+    font-size: clamp(2.4rem, 3.5vw, 3.5rem);
 }
 
 /* Cards de contato em grid */
@@ -838,6 +750,92 @@ footer {
     border-radius: 25px;
 }
 
+/* ======================= */
+/* HEADER / NAVBAR         */
+/* ======================= */
+header {
+    white-space: nowrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 300px;
+    background-color: #121212c4;
+    z-index: 1000;
+    border-bottom: 1px solid #444;
+}
+
+/* ---- NAVBAR PRINCIPAL ---- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 2px solid #27BA06;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #4EE00C;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.nav-item {
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-item.active {
+    color: white;
+}
+
+.nav-item:hover {
+    color: #4EE00C;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+}
 
 /* ======================= */
 /* RESPONSIVIDADE          */

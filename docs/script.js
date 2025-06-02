@@ -1,3 +1,12 @@
+// Navbar
+const menuIcon = document.getElementById('menu-icon');
+    const navList = document.getElementById('nav-list');
+
+    menuIcon.addEventListener('click', () => {
+        navList.classList.toggle('open');
+    });
+
+// Texto dinamico
 const texts = ["Fullstack", "Back-end", "Front-end"];
 const dynamicText = document.getElementById("dynamic-text");
 const cursor = document.getElementById("cursor");
