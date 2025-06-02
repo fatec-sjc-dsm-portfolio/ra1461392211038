@@ -9,11 +9,32 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
     background-color: #121212;
 }
 
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/Raleway/Raleway-Regular.woff2') format('woff2'),
+         url('fonts/Raleway/Raleway-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/Raleway/Raleway-Bold.woff2') format('woff2'),
+         url('fonts/Raleway/Raleway-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    --fonte-principal: 'Raleway', sans-serif;
+}
+
+* {
+    font-family: var(--fonte-principal);
+}
 
 /* ======================= */
 /* SEÇÃO INICIAL FIXADA    */
@@ -24,49 +45,50 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #121212;
-    padding: 20px;
+    padding: 10%;
 }
 
 .inicio {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 100%;
     max-width: 1300px;
-    flex-wrap: nowrap; /* Mantém lado a lado */
-    gap: 20px;
+    flex-wrap: nowrap; 
 }
 
 .inicio .content {
-    flex: 2; 
+    flex: 1; 
     text-align: left;
-    padding: 10px;
+
     min-width: 0;
 }
 
 .inicio h2 {
-    font-size: clamp(0.4rem, 3vw, 2.5rem);
+    font-size: clamp(0.8rem, 3vw, 4.5rem);
     color: #4EE00C;
     font-family: 'Arial', sans-serif;
+    padding: 0px 0px 10px;
 }
 
 .inicio .role,
 .inicio #dynamic-text,
 .inicio .cursor {
-    font-size: clamp(0.4rem, 2.5vw, 1.5rem);
+    font-size: clamp(0.5rem, 2.5vw, 3.5rem);
     color: #A8FF7A;
     font-weight: bold;
 }
 
 .inicio p {
-    font-size: clamp(0.4rem, 2vw, 1rem);
+    font-size: clamp(0.5rem, 2vw, 3rem);
     color: #A8FF7A;
     font-weight: bold;
+    padding: 0px 0px 10px;
 
 }
 
 .inicio h3 {
-    font-size: clamp(0.6rem, 3vw, 2rem);
+    font-size: clamp(0.6rem, 3vw, 3.5rem);
     color: #4EE00C;
 
     font-family: 'Arial', sans-serif;
@@ -79,15 +101,21 @@ body {
     align-items: center;
 }
 
-.inicio .photos img {
-    width: clamp(120px, 35vw, 400px);
+.photo-border {
+    display: inline-block;
+    padding: clamp(3px, 0.8vw, 6px); 
+    border-radius: 50%;
+    background: linear-gradient(45deg, #009400, #0D7F53, #27BA06, #4EE00C);
+    background-size: 400% 400%;
+    animation: gradient-border 4s ease infinite;
+}
+
+.photo-border img {
+    display: block;
+    width: clamp(80px, 25vw, 400px);
     height: auto;
     border-radius: 50%;
-    border: solid transparent; 
-    border-width: clamp(1px, 1.5vw, 5px);
-    background-image: linear-gradient(45deg, #009400, #0D7F53, #27BA06, #4EE00C);
-    background-size: 400% 400%;
-    animation: gradient-border 4s linear infinite;
+    background-color: #000;
 }
 
 
@@ -95,15 +123,9 @@ body {
 /* ANIMAÇÕES               */
 /* ======================= */
 @keyframes gradient-border {
-    0% {
-        background-position: 100% 0%;
-    }
-    50% {
-        background-position: 0% 100%;
-    }
-    100% {
-        background-position: 100% 0%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 @keyframes blink {
@@ -126,6 +148,10 @@ body {
 /* RESPONSIVIDADE          */
 /* ======================= */
 @media (max-width: 768px) {
+    .inicio .content {
+    flex: 2;
+    }
+
     .motion {
         height: auto;
         padding-top: 80px;
@@ -136,7 +162,7 @@ body {
     }
 
     .inicio .content {
-        padding: 10px;
+
     }
 }
 
@@ -144,7 +170,6 @@ body {
     .motion {
         height: auto;
         padding-top: 80px;
-        padding-bottom: 10px;
     }
 
     .inicio {
@@ -152,7 +177,6 @@ body {
     }
 
     .inicio .content {
-        padding: 5px;
     }
 }
 
@@ -160,7 +184,7 @@ body {
 /* SEÇÃO SOBRE MIM         */
 /* ======================= */
 #sobre {
-    padding: 40px 10%;
+    padding: 10px 10%;
     background-color: #121212; 
 }
 
@@ -168,11 +192,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 800px;
 }
 
 .titulo-sobre h2 {
-    font-size: clamp(2.4rem, 3.5vw, 3.5rem);
+    font-size: clamp(1.0rem, 3vw, 3.5rem);
     color: #4EE00C;
     
 }
@@ -193,71 +216,13 @@ body {
 /* Faz o <p> ter altura automática e ocupa o resto do espaço */
 .texto-com-linha p {
     margin: 0;
-    line-height: 1.6;
-    font-size: 1.2rem;
-    color: #3BCD09;
-    max-width: 850px; 
-    overflow-wrap: break-word;
-}
-
-/* ======================= */
-/* RESPONSIVIDADE Sobre    */
-/* ======================= */
-@media (max-width: 1024px) {
-    .titulo-sobre h2 {
-        font-size: 2.5rem;
-    }
-
-    .texto-com-linha p {
-        font-size: 1.1rem;
-        max-width: 100%;
-    }
-
-    .conteudo-sobre {
-        max-width: 90%;
-    }
-}
-
-@media (max-width: 768px) {
-    .titulo-sobre h2 {
-        font-size: 2.2rem;
-    }
-
-    .texto-com-linha {
-        gap: 10px;
-    }
-
-    .texto-com-linha p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    #sobre {
-        padding: 30px 5%;
-    }
-
-    .titulo-sobre h2 {
-        font-size: 1.8rem;
-    }
-
-    .linha-verde {
-        width: 2px;
-    }
-
-    .texto-com-linha {
-        gap: 8px;
-        flex-direction: row;
-    }
-
-    .texto-com-linha p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-    }
-
-    .conteudo-sobre {
-        max-width: 100%;
-    }
+    line-height: 1.8;
+    color: #27BA06;
+    font-size: clamp(0.5rem, 3vw, 1.2rem);
+    max-width: 90%;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
 }
 
 /* ======================= */
@@ -275,7 +240,7 @@ body {
 }
 
 .titulo-softskills h2 {
-    font-size: clamp(2.4rem, 3.5vw, 3.5rem);
+    font-size: clamp(1rem, 3vw, 3.5rem);
     color: #4EE00C;
     margin: 0;
     text-align: right;
@@ -295,67 +260,15 @@ body {
 
 .texto-com-linha2 p {
     margin: 0;
-    line-height: 1.6;
-    color: #3BCD09;
-    font-size: 1.2rem;
-    max-width: 850px;  
-    text-align: right;
+    line-height: 1.8;
+    color: #27BA06;
+    font-size: clamp(0.5rem, 3vw, 1.2rem);
+    max-width: 90%;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
     overflow-wrap: break-word;
-}
-
-/* ======================= */
-/* RESPONSIVIDADE Software */
-/* ======================= */
-@media (max-width: 1024px) {
-    .titulo-softskills h2 {
-        font-size: 2.5rem;
-    }
-
-    .texto-com-linha2 p {
-        font-size: 1.1rem;
-        max-width: 100%;
-    }
-
-    .conteudo-softskills {
-        max-width: 90%;
-    }
-}
-
-@media (max-width: 768px) {
-    .titulo-softskills h2 {
-        font-size: 2.2rem;
-    }
-
-    .texto-com-linha2 {
-        gap: 10px;
-    }
-
-    .texto-com-linha2 p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    #softskills {
-        padding: 30px 5%;
-    }
-
-    .titulo-softskills h2 {
-        font-size: 1.8rem;
-    }
-
-    .texto-com-linha2 {
-        gap: 8px;
-    }
-
-    .texto-com-linha2 p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-    }
-
-    .conteudo-softskills {
-        max-width: 100%;
-    }
+    text-align-last: right;
 }
 
 /* ======================= */
@@ -370,11 +283,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 800px;
 }
 
 .titulo-hardwareskills h2 {
-    font-size: clamp(2.4rem, 3.5vw, 3.5rem);
+    font-size: clamp(1rem, 3vw, 3.5rem);
     color: #4EE00C;
     
 }
@@ -389,73 +301,19 @@ body {
 /* Faz o <p> ter altura automática e ocupa o resto do espaço */
 .texto-com-linha3 p {
     margin: 0;
-    line-height: 1.6;
-    font-size: 1.2rem;
-    color: #3BCD09;
-    max-width: 850px;
-    overflow-wrap: break-word;
-}
-
-/* ======================= */
-/* RESPONSIVIDADE Hardware */
-/* ======================= */
-@media (max-width: 1024px) {
-    .titulo-hardwareskills h2 {
-        font-size: 2.5rem;
-    }
-
-    .texto-com-linha3 p {
-        font-size: 1.1rem;
-        max-width: 100%;
-    }
-
-    .conteudo-hardwareskills {
-        max-width: 90%;
-    }
-}
-
-@media (max-width: 768px) {
-    .titulo-hardwareskills h2 {
-        font-size: 2.2rem;
-    }
-
-    .texto-com-linha3 {
-        gap: 10px;
-    }
-
-    .texto-com-linha3 p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    #hardwareskills {
-        padding: 30px 5%;
-    }
-
-    .titulo-hardwareskills h2 {
-        font-size: 1.8rem;
-    }
-
-    .texto-com-linha3 {
-        gap: 8px;
-    }
-
-    .texto-com-linha3 p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-    }
-
-    .conteudo-hardwareskills {
-        max-width: 100%;
-    }
+    line-height: 1.8;
+    color: #27BA06;
+    font-size: clamp(0.5rem, 3vw, 1.2rem);
+    max-width: 90%;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
 }
 
 /* ======================= */
 /* SEÇÃO PROJETOS          */
 /* ======================= */
 #projetos {
-    padding: 60px 10%;
     background-color: #121212;
 }
 
@@ -463,12 +321,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; 
     max-width: 1200px;
     margin: 0 auto;
+    text-align: center; 
 }
 
 .titulo-secao {
-    font-size: clamp(2.4rem, 3.5vw, 3.5rem);
+    font-size: clamp(1rem, 3vw, 3.5rem);
     margin-bottom: 30px;
     color: #4EE00C;
 }
@@ -476,24 +336,36 @@ body {
 /* Grid dos projetos */
 .grid-projetos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(5px, 1vw, 40px);
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     justify-items: center;
 }
 
-/* Card individual */
+.card-projeto {
+    width: clamp(700px, 20vw, 280px);
+}
+
 .card-projeto {
     background-color: #121212;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 250px;
-    width: 100%;
+    width: clamp(100px, 30vw, 250px);
     display: flex;
     flex-direction: column;
+}
+
+.card-projeto img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+    border: solid clamp(2px, 0.5vw, 4px) #27BA06;
 }
 
 .card-projeto:hover {
@@ -501,22 +373,11 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* Imagem do card */
-.card-projeto img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    display: block;
-    border-radius: 50%;
-    border: solid 3px #27BA06;
-}
-
 /* Título do projeto */
 .card-projeto h3 {
     padding: 10px;
-    font-size: clamp(0.85rem, 1.5vw, 1.1rem);
-    color: #4EE00C;
+    font-size: clamp(0.6rem, 1.5vw, 1.1rem);
+    color: #27BA06;
     text-align: center;
     flex: 1;
     display: flex;
@@ -532,39 +393,15 @@ body {
     display: block;
 }
 
-@media (max-width: 1024px) {
-    .grid-projetos {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-}
 
-@media (max-width: 600px) {
-    .grid-projetos {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-
-    .card-projeto {
-        max-width: 170px;
-    }
-
-    .card-projeto h3 {
-        font-size: 0.9rem;
-        padding: 8px;
-    }
-
-    #projetos {
-        padding: 40px 5%;
-    }
-}
 
 /* ======================= */
 /* SEÇÃO CONTATO           */
 /* ======================= */
 .contact-section {
-    max-width: 90%;
+    max-width: 100%;
     margin: 40px auto;
+    max-width: 1200px;
     padding: 20px;
     height: auto;
 }
@@ -573,14 +410,15 @@ body {
     text-align: center;
     margin-bottom: 30px;
     color: #4EE00C;
-    font-size: clamp(2.4rem, 3.5vw, 3.5rem);
+    font-size: clamp(1rem, 3vw, 3.5rem);
 }
 
 /* Cards de contato em grid */
 .contact-items {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+    gap: clamp(8px, 1vw, 20px);
+    justify-content: center;
     align-items: center;
     justify-items: center;
 }
@@ -610,7 +448,7 @@ body {
 }
 
 .contact-text {
-    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+    font-size: clamp(0.6rem, 1vw, 1.2rem);
     color: #3BCD09;
     text-align: center;
 }

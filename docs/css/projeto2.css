@@ -1,6 +1,30 @@
 /* ======================= */
 /* RESET E BASE            */
 /* ======================= */
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/Raleway/Raleway-Regular.woff2') format('woff2'),
+         url('fonts/Raleway/Raleway-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/Raleway/Raleway-Bold.woff2') format('woff2'),
+         url('fonts/Raleway/Raleway-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    --fonte-principal: 'Raleway', sans-serif;
+}
+
+* {
+    font-family: var(--fonte-principal);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -72,11 +96,11 @@ header {
 
 .titulo-projeto {
     text-align: center;
-    padding: 80px 20px 40px;
+    padding: 80px 20px 0px;
 }
 
 .titulo-projeto h1 {
-    font-size: 3rem;
+    font-size: clamp(1rem, 3vw, 5rem);
     font-weight: bold;
     background-image: linear-gradient(45deg, #009400, #0D7F53, #27BA06, #4EE00C);
     background-size: 400% 400%;
@@ -85,6 +109,7 @@ header {
     background-clip: text;
     color: transparent;
     animation: gradient-text 4s linear infinite;
+    
 }
 
 /* 🔥 Animação do gradiente no texto */
@@ -103,41 +128,21 @@ header {
 /* ======================= */
 /* Responsividade Título   */
 /* ======================= */
-@media (max-width: 1024px) {
-    .titulo-projeto h1 {
-        font-size: 2.5rem;
-    }
-}
 
-@media (max-width: 768px) {
-    .titulo-projeto h1 {
-        font-size: 2rem;
-    }
-}
 
-@media (max-width: 480px) {
-    .titulo-projeto h1 {
-        font-size: 1.8rem;
-    }
-}
-
-/* ======================= */
-/* SEÇÃO SOBRE MIM         */
-/* ======================= */
 #sobre {
-    padding: 0px 10%;
-    background-color: #121212; /* Cor de fundo opcional */
+    padding: 40px 10%;
+    background-color: #121212; 
 }
 
 .conteudo-sobre {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 800px;
 }
 
 .titulo-sobre h3 {
-    font-size: 2.5rem;
+    font-size: clamp(0.8rem, 2vw, 3.5rem);
     color: #4EE00C;
     
 }
@@ -145,7 +150,7 @@ header {
 .linha-verde {
     width: 3px;
     background-color: #4EE00C;
-    align-self: stretch; /* Faz a linha ocupar a altura total do container flex */
+    align-self: stretch;
 }
 
 .texto-com-linha {
@@ -158,75 +163,17 @@ header {
 /* Faz o <p> ter altura automática e ocupa o resto do espaço */
 .texto-com-linha p {
     margin: 0;
-    line-height: 1.6;
-    font-size: 1.2rem;
-    color: #3BCD09;
-    max-width: 850px; /* controla a largura do texto */
-    overflow-wrap: break-word;
+    line-height: 1.8;
+    color: #27BA06;
+    font-size: clamp(0.5rem, 3vw, 1.2rem);
+    max-width: 90%;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
 }
 
 /* ======================= */
-/* RESPONSIVIDADE Sobre    */
-/* ======================= */
-@media (max-width: 1024px) {
-    .titulo-sobre h3 {
-        font-size: 2.5rem;
-    }
-
-    .texto-com-linha p {
-        font-size: 1.1rem;
-        max-width: 100%;
-    }
-
-    .conteudo-sobre {
-        max-width: 90%;
-    }
-}
-
-@media (max-width: 768px) {
-    .titulo-sobre h3 {
-        font-size: 2.2rem;
-    }
-
-    .texto-com-linha {
-        gap: 10px;
-    }
-
-    .texto-com-linha p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    #sobre {
-        padding: 30px 5%;
-    }
-
-    .titulo-sobre h3 {
-        font-size: 1.8rem;
-    }
-
-    .linha-verde {
-        width: 2px;
-    }
-
-    .texto-com-linha {
-        gap: 8px;
-        flex-direction: row;
-    }
-
-    .texto-com-linha p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-    }
-
-    .conteudo-sobre {
-        max-width: 100%;
-    }
-}
-
-/* ======================= */
-/* Contribuições           */
+/* Software skills         */
 /* ======================= */
 #softskills {
     padding: 40px 10%;
@@ -240,10 +187,10 @@ header {
 }
 
 .titulo-softskills h3 {
-    font-size: 3rem;
+    font-size: clamp(0.8rem, 2vw, 3.5rem);
     color: #4EE00C;
     margin: 0;
-    text-align: right; /* título alinhado à direita */
+    text-align: right;
 }
 
 .texto-softskills {
@@ -260,86 +207,33 @@ header {
 
 .texto-com-linha2 p {
     margin: 0;
-    line-height: 1.6;
-    color: #3BCD09;
-    font-size: 1.2rem;
-    max-width: 850px; 
-    text-align: right;
+    line-height: 1.8;
+    color: #27BA06;
+    font-size: clamp(0.5rem, 3vw, 1.2rem);
+    max-width: 90%;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
     overflow-wrap: break-word;
+    text-align-last: right;
 }
 
 /* ======================= */
-/* RESPONSIVIDADE Software */
-/* ======================= */
-@media (max-width: 1024px) {
-    .titulo-softskills h3 {
-        font-size: 2.5rem;
-    }
-
-    .texto-com-linha2 p {
-        font-size: 1.1rem;
-        max-width: 100%;
-    }
-
-    .conteudo-softskills {
-        max-width: 90%;
-    }
-}
-
-@media (max-width: 768px) {
-    .titulo-softskills h3 {
-        font-size: 2.2rem;
-    }
-
-    .texto-com-linha2 {
-        gap: 10px;
-    }
-
-    .texto-com-linha2 p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    #softskills {
-        padding: 30px 5%;
-    }
-
-    .titulo-softskills h3 {
-        font-size: 1.8rem;
-    }
-
-    .texto-com-linha2 {
-        gap: 8px;
-    }
-
-    .texto-com-linha2 p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-    }
-
-    .conteudo-softskills {
-        max-width: 100%;
-    }
-}
-
-/* ======================= */
-/* Acesse Documentação     */
+/* Hardware skills         */
 /* ======================= */
 #hardwareskills {
     padding: 40px 10%;
-    background-color: #121212; /* Cor de fundo opcional */
+    background-color: #121212;
 }
 
 .conteudo-hardwareskills {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 800px;
 }
 
 .titulo-hardwareskills h3 {
-    font-size: 3rem;
+    font-size: clamp(0.9rem, 2vw, 3.5rem);
     color: #4EE00C;
     
 }
@@ -354,20 +248,28 @@ header {
 /* Faz o <p> ter altura automática e ocupa o resto do espaço */
 .texto-com-linha3 p {
     margin: 0;
-    line-height: 1.6;
-    font-size: 1.2rem;
-    color: #3BCD09;
-    max-width: 850px; 
-    overflow-wrap: break-word;
+    line-height: 1.8;
+    color: #27BA06;
+    font-size: clamp(0.5rem, 2.5vw, 1.2rem);
+    max-width: 90%;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
 }
 
 /* Estilo para o link */
 .link-github {
-    color: #3BCD09;
-    font-size: 1.2rem;
+    font-size: clamp(0.5rem, 2.5vw, 1.2rem);
+    background-image: linear-gradient(45deg, #009400, #0D7F53, #27BA06, #4EE00C);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-text 4s linear infinite;
     text-decoration: none;
-    position: relative;
-    transition: color 0.3s ease;
+    display: inline-block; 
+    position: relative; 
 }
 
 .link-github::after {
@@ -377,7 +279,9 @@ header {
     height: 2px;
     left: 0;
     bottom: -3px;
-    background-color: #3BCD09;
+    background-image: linear-gradient(45deg, #009400, #0D7F53, #27BA06, #4EE00C);
+    background-size: 400% 400%;
+    animation: gradient-border 4s linear infinite;
     transition: width 0.3s ease;
 }
 
@@ -387,61 +291,6 @@ header {
 
 .link-github:hover::after {
     width: 100%;
-}
-
-/* ======================= */
-/* RESPONSIVIDADE Hardware */
-/* ======================= */
-@media (max-width: 1024px) {
-    .titulo-hardwareskills h3 {
-        font-size: 2.5rem;
-    }
-
-    .texto-com-linha3 p {
-        font-size: 1.1rem;
-        max-width: 100%;
-    }
-
-    .conteudo-hardwareskills {
-        max-width: 90%;
-    }
-}
-
-@media (max-width: 768px) {
-    .titulo-hardwareskills h3 {
-        font-size: 2.2rem;
-    }
-
-    .texto-com-linha3 {
-        gap: 10px;
-    }
-
-    .texto-com-linha3 p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    #hardwareskills {
-        padding: 30px 5%;
-    }
-
-    .titulo-hardwareskills h3 {
-        font-size: 1.8rem;
-    }
-
-    .texto-com-linha3 {
-        gap: 8px;
-    }
-
-    .texto-com-linha3 p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-    }
-
-    .conteudo-hardwareskills {
-        max-width: 100%;
-    }
 }
 
 /* ======================= */
