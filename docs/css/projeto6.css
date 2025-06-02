@@ -1,0 +1,433 @@
+/* ======================= */
+/* RESET E BASE            */
+/* ======================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*background-image: url('assets/background/matrix.gif');*/
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #121212;
+}
+
+/* ======================= */
+/* HEADER / NAVBAR         */
+/* ======================= */
+header {
+    white-space: nowrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 300px;
+    background-color: #121212c4;
+    z-index: 1000;
+    border-bottom: 1px solid #444;
+}
+
+/* ---- NAVBAR SIMPLES ---- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #121212;
+    color: white;
+    padding: 10px 20px;
+    border-bottom: 2px solid #27BA06;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-start; /* Alinha à esquerda */
+    align-items: center;
+}
+
+/* Estilo do botão voltar */
+.voltar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 8px 15px;
+    border: 2px solid #27BA06;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.voltar a:hover {
+    background-color: #27BA06;
+    color: black;
+}
+
+/* ======================= */
+/* Titulo                  */
+/* ======================= */
+
+.titulo-projeto {
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
+.titulo-projeto h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    background-image: linear-gradient(45deg, #009400, #0D7F53, #27BA06, #4EE00C);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-text 4s linear infinite;
+}
+
+/* 🔥 Animação do gradiente no texto */
+@keyframes gradient-text {
+    0% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+/* ======================= */
+/* SEÇÃO SOBRE MIM         */
+/* ======================= */
+#sobre {
+    padding: 0px 10%;
+    background-color: #121212; /* Cor de fundo opcional */
+}
+
+.conteudo-sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 800px;
+}
+
+.titulo-sobre h3 {
+    font-size: 2.5rem;
+    color: #4EE00C;
+    
+}
+
+.linha-verde {
+    width: 3px;
+    background-color: #4EE00C;
+    align-self: stretch; /* Faz a linha ocupar a altura total do container flex */
+}
+
+.texto-com-linha {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    max-width: 100%;
+}
+
+/* Faz o <p> ter altura automática e ocupa o resto do espaço */
+.texto-com-linha p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    color: #3BCD09;
+    max-width: 700px; /* controla a largura do texto */
+    overflow-wrap: break-word;
+}
+
+/* ======================= */
+/* RESPONSIVIDADE Sobre    */
+/* ======================= */
+@media (max-width: 1024px) {
+    .titulo-sobre h3 {
+        font-size: 2.5rem;
+    }
+
+    .texto-com-linha p {
+        font-size: 1.1rem;
+        max-width: 100%;
+    }
+
+    .conteudo-sobre {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .titulo-sobre h3 {
+        font-size: 2.2rem;
+    }
+
+    .texto-com-linha {
+        gap: 10px;
+    }
+
+    .texto-com-linha p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #sobre {
+        padding: 30px 5%;
+    }
+
+    .titulo-sobre h3 {
+        font-size: 1.8rem;
+    }
+
+    .linha-verde {
+        width: 2px;
+    }
+
+    .texto-com-linha {
+        gap: 8px;
+        flex-direction: row;
+    }
+
+    .texto-com-linha p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .conteudo-sobre {
+        max-width: 100%;
+    }
+}
+
+/* ======================= */
+/* Contribuições           */
+/* ======================= */
+#softskills {
+    padding: 40px 10%;
+    background-color: #121212;
+}
+
+.conteudo-softskills {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.titulo-softskills h3 {
+    font-size: 3rem;
+    color: #4EE00C;
+    margin: 0;
+    text-align: right; /* título alinhado à direita */
+}
+
+.texto-softskills {
+    max-width: 100%;
+}
+
+.texto-com-linha2 {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    justify-content: flex-end;
+    max-width: 100%;
+}
+
+.texto-com-linha2 p {
+    margin: 0;
+    line-height: 1.6;
+    color: #3BCD09;
+    font-size: 1.2rem;
+    max-width: 700px; 
+    text-align: right;
+    overflow-wrap: break-word;
+}
+
+/* ======================= */
+/* RESPONSIVIDADE Software */
+/* ======================= */
+@media (max-width: 1024px) {
+    .titulo-softskills h3 {
+        font-size: 2.5rem;
+    }
+
+    .texto-com-linha2 p {
+        font-size: 1.1rem;
+        max-width: 100%;
+    }
+
+    .conteudo-softskills {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .titulo-softskills h3 {
+        font-size: 2.2rem;
+    }
+
+    .texto-com-linha2 {
+        gap: 10px;
+    }
+
+    .texto-com-linha2 p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #softskills {
+        padding: 30px 5%;
+    }
+
+    .titulo-softskills h3 {
+        font-size: 1.8rem;
+    }
+
+    .texto-com-linha2 {
+        gap: 8px;
+    }
+
+    .texto-com-linha2 p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .conteudo-softskills {
+        max-width: 100%;
+    }
+}
+
+/* ======================= */
+/* Acesse Documentação     */
+/* ======================= */
+#hardwareskills {
+    padding: 40px 10%;
+    background-color: #121212; /* Cor de fundo opcional */
+}
+
+.conteudo-hardwareskills {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 800px;
+}
+
+.titulo-hardwareskills h3 {
+    font-size: 3rem;
+    color: #4EE00C;
+    
+}
+
+.texto-com-linha3 {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    max-width: 100%;
+}
+
+/* Faz o <p> ter altura automática e ocupa o resto do espaço */
+.texto-com-linha3 p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    color: #3BCD09;
+    max-width: 700px; /* controla a largura do texto */
+    overflow-wrap: break-word;
+}
+
+/* ======================= */
+/* RESPONSIVIDADE Hardware */
+/* ======================= */
+@media (max-width: 1024px) {
+    .titulo-hardwareskills h3 {
+        font-size: 2.5rem;
+    }
+
+    .texto-com-linha3 p {
+        font-size: 1.1rem;
+        max-width: 100%;
+    }
+
+    .conteudo-hardwareskills {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .titulo-hardwareskills h3 {
+        font-size: 2.2rem;
+    }
+
+    .texto-com-linha3 {
+        gap: 10px;
+    }
+
+    .texto-com-linha3 p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #hardwareskills {
+        padding: 30px 5%;
+    }
+
+    .titulo-hardwareskills h3 {
+        font-size: 1.8rem;
+    }
+
+    .texto-com-linha3 {
+        gap: 8px;
+    }
+
+    .texto-com-linha3 p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .conteudo-hardwareskills {
+        max-width: 100%;
+    }
+}
+
+/* ======================= */
+/* SIDEBAR E SCROLL        */
+/* ======================= */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 100%;
+}
+
+::-webkit-scrollbar-track {
+    background-image: linear-gradient(to bottom, #32b008, #1f9405, #0D7F53);
+    border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4EE00C;
+    border-radius: 25px;
+}
+
+/* ======================= */
+/* FOOTER                  */
+/* ======================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #121212;
+    color: white;
+}
