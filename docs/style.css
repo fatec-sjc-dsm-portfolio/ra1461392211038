@@ -512,123 +512,94 @@ nav ul li a:hover {
 /* ======================= */
 /* SEÇÃO PROJETOS          */
 /* ======================= */
-.carrossel-container {
+#projetos {
+    padding: 60px 10%;
+    background-color: #121212;
+}
+
+.conteudo-projetos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo-secao {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #4EE00C;
+}
+
+/* Grid dos projetos */
+.grid-projetos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+/* Card individual */
+.card-projeto {
+    background-color: #121212;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-projeto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Imagem do card */
+.card-projeto img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+    border: solid 3px #27BA06;
+}
+
+/* Título do projeto */
+.card-projeto h3 {
+    padding: 10px;
+    font-size: 1.1rem;
+    color: #4EE00C;
+    text-align: center;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    width: 100%;
-    margin-top: 20px;
 }
 
-.carrossel-wrapper {
-    width: 80%;
-    overflow: hidden;
+/* Link sem sublinhado */
+.card-projeto a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
-.carrossel {
-    display: flex;
-    transition: transform 0.5s ease;
+@media (max-width: 900px) {
+    .grid-projetos {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.projetos-card h2 {
-    color: #27BA06;
-    font-size: 2rem;
-    text-align: center;
-    text-transform: uppercase;
+@media (max-width: 600px) {
+    .grid-projetos {
+        grid-template-columns: 1fr;
+    }
 }
-
-.projeto-item {
-    width: 95%;
-    flex: 0 0 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    border: 3px solid #27BA06;
-    border-radius: 10px;
-    background-color: #fff;
-    padding: 20px;
-    box-sizing: border-box;
-    background: transparent;
-    height: 500px;
-}
-
-.projeto-imagem {
-    width: 45%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    overflow: hidden;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.projeto-imagem img {
-    width: 100%;
-    height: auto;
-    max-height: 100%;
-    object-fit: contain;
-    border-radius: 10px;
-    border: 3px solid #27BA06;
-    box-sizing: border-box;
-}
-
-.projeto-texto {
-    width: 53%;
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    overflow-y: auto;
-    height: 100%;
-    scrollbar-width: thin;
-    scrollbar-color: #3BCD09 transparent;
-}
-
-.projeto-texto::-webkit-scrollbar {
-    width: 6px;
-}
-
-.projeto-texto::-webkit-scrollbar-thumb {
-    background-color: #3BCD09;
-    border-radius: 10px;
-}
-
-.projeto-texto h3 {
-    font-size: 1.5vw;
-    color: #27BA06;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.projeto-texto p {
-    font-size: 1vw;
-    color: #3BCD09;
-    line-height: 1.5;
-    text-align: justify;
-    hyphens: auto;
-    overflow-wrap: break-word;
-    word-break: break-word;
-}
-
-.carrossel-btn {
-    background-color: transparent;
-    border: none;
-    font-size: 2.5rem;
-    color: #3BCD09;
-    cursor: pointer;
-    z-index: 10;
-    height: 400px;
-    display: flex;
-    align-items: center;
-}
-
-.carrossel-btn:hover {
-    color: #27BA06;
-}
-
 
 /* ======================= */
 /* SEÇÃO CERTIFICAÇÕES     */
@@ -650,7 +621,6 @@ nav ul li a:hover {
     height: 100px;
 }
 
-
 /* ======================= */
 /* SEÇÃO CONTATO           */
 /* ======================= */
@@ -669,11 +639,11 @@ nav ul li a:hover {
 }
 
 .contact-card {
-    border: 3px solid #27BA06;
+
     border-radius: 10px;
     padding: 30px;
     width: 100%;
-    background-image: url('assets/background/background.png');
+
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay;
