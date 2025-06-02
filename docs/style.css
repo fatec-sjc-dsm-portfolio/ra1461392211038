@@ -220,8 +220,8 @@ nav ul li a:hover {
 @media (max-width: 1024px) {
      .motion {
         align-items: flex-start;
-        padding-top: 100px; /* espaço para a navbar */
-        padding-bottom: 50px; /* espaço até a próxima sessão */
+        padding-top: 100px; 
+        padding-bottom: 50px; 
         height: auto;
     }
     .inicio {
@@ -252,8 +252,8 @@ nav ul li a:hover {
 @media (max-width: 768px) {
      .motion {
         align-items: flex-start;
-        padding-top: 100px; /* espaço para a navbar */
-        padding-bottom: 50px; /* espaço até a próxima sessão */
+        padding-top: 100px; 
+        padding-bottom: 50px; 
         height: auto;
     }
     .inicio {
@@ -293,8 +293,8 @@ nav ul li a:hover {
 @media (max-width: 480px) {
      .motion {
         align-items: flex-start;
-        padding-top: 100px; /* espaço para a navbar */
-        padding-bottom: 50px; /* espaço até a próxima sessão */
+        padding-top: 100px; 
+        padding-bottom: 50px; 
         height: auto;
     }
     .inicio h2 {
@@ -324,7 +324,7 @@ nav ul li a:hover {
 /* ======================= */
 #sobre {
     padding: 40px 10%;
-    background-color: #121212; /* Cor de fundo opcional */
+    background-color: #121212; 
 }
 
 .conteudo-sobre {
@@ -335,7 +335,7 @@ nav ul li a:hover {
 }
 
 .titulo-sobre h2 {
-    font-size: 3rem;
+    font-size: clamp(3rem, 1.5vw, 1.1rem);
     color: #4EE00C;
     
 }
@@ -343,7 +343,7 @@ nav ul li a:hover {
 .linha-verde {
     width: 3px;
     background-color: #4EE00C;
-    align-self: stretch; /* Faz a linha ocupar a altura total do container flex */
+    align-self: stretch;
 }
 
 .texto-com-linha {
@@ -359,7 +359,7 @@ nav ul li a:hover {
     line-height: 1.6;
     font-size: 1.2rem;
     color: #3BCD09;
-    max-width: 700px; /* controla a largura do texto */
+    max-width: 850px; 
     overflow-wrap: break-word;
 }
 
@@ -438,10 +438,10 @@ nav ul li a:hover {
 }
 
 .titulo-softskills h2 {
-    font-size: 3rem;
+    font-size: clamp(3rem, 1.5vw, 1.1rem);
     color: #4EE00C;
     margin: 0;
-    text-align: right; /* título alinhado à direita */
+    text-align: right;
 }
 
 .texto-softskills {
@@ -461,7 +461,7 @@ nav ul li a:hover {
     line-height: 1.6;
     color: #3BCD09;
     font-size: 1.2rem;
-    max-width: 700px; 
+    max-width: 850px;  
     text-align: right;
     overflow-wrap: break-word;
 }
@@ -526,7 +526,7 @@ nav ul li a:hover {
 /* ======================= */
 #hardwareskills {
     padding: 40px 10%;
-    background-color: #121212; /* Cor de fundo opcional */
+    background-color: #121212;
 }
 
 .conteudo-hardwareskills {
@@ -537,7 +537,7 @@ nav ul li a:hover {
 }
 
 .titulo-hardwareskills h2 {
-    font-size: 3rem;
+    font-size: clamp(3rem, 1.5vw, 1.1rem);
     color: #4EE00C;
     
 }
@@ -555,7 +555,7 @@ nav ul li a:hover {
     line-height: 1.6;
     font-size: 1.2rem;
     color: #3BCD09;
-    max-width: 700px; /* controla a largura do texto */
+    max-width: 850px;
     overflow-wrap: break-word;
 }
 
@@ -631,7 +631,7 @@ nav ul li a:hover {
 }
 
 .titulo-secao {
-    font-size: 3rem;
+    font-size: clamp(3rem, 1.5vw, 1.1rem);
     margin-bottom: 30px;
     color: #4EE00C;
 }
@@ -678,7 +678,7 @@ nav ul li a:hover {
 /* Título do projeto */
 .card-projeto h3 {
     padding: 10px;
-    font-size: 1.1rem;
+    font-size: clamp(0.85rem, 1.5vw, 1.1rem);
     color: #4EE00C;
     text-align: center;
     flex: 1;
@@ -695,15 +695,30 @@ nav ul li a:hover {
     display: block;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
     .grid-projetos {
         grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
 }
 
 @media (max-width: 600px) {
     .grid-projetos {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .card-projeto {
+        max-width: 170px;
+    }
+
+    .card-projeto h3 {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    #projetos {
+        padding: 40px 5%;
     }
 }
 
@@ -711,7 +726,7 @@ nav ul li a:hover {
 /* SEÇÃO CONTATO           */
 /* ======================= */
 .contact-section {
-    max-width: 80%;
+    max-width: 90%;
     margin: 40px auto;
     padding: 20px;
     height: auto;
@@ -721,34 +736,23 @@ nav ul li a:hover {
     text-align: center;
     margin-bottom: 30px;
     color: #3BCD09;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
 }
 
-.contact-card {
-    border-radius: 10px;
-    padding: 30px;
-    width: 100%;
-
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: overlay;
-    position: relative;
-}
-
+/* Cards de contato em grid */
 .contact-items {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
 }
 
 .contact-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    min-width: 150px;
-    margin: 5px 0;
-    padding: 5px;
+    padding: 10px;
     transition: transform 0.3s ease;
 }
 
@@ -757,10 +761,10 @@ nav ul li a:hover {
 }
 
 .contact-icon {
-    width: 60px;
+    width: clamp(40px, 8vw, 60px);
     height: auto;
-    margin-right: 15px;
     border-radius: 50%;
+    margin-bottom: 10px;
 }
 
 .contact-link {
@@ -769,8 +773,30 @@ nav ul li a:hover {
 }
 
 .contact-text {
-    font-size: 1.2rem;
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
     color: #3BCD09;
+    text-align: center;
+}
+
+/* ======================= */
+/* RESPONSIVIDADE CONTATO  */
+/* ======================= */
+@media (max-width: 768px) {
+    .contact-items {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-items {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .contact-section {
+        padding: 10px;
+        margin: 20px auto;
+    }
 }
 
 

@@ -101,6 +101,27 @@ header {
 }
 
 /* ======================= */
+/* Responsividade Título   */
+/* ======================= */
+@media (max-width: 1024px) {
+    .titulo-projeto h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .titulo-projeto h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-projeto h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ======================= */
 /* SEÇÃO SOBRE MIM         */
 /* ======================= */
 #sobre {
@@ -140,7 +161,7 @@ header {
     line-height: 1.6;
     font-size: 1.2rem;
     color: #3BCD09;
-    max-width: 700px; /* controla a largura do texto */
+    max-width: 850px; /* controla a largura do texto */
     overflow-wrap: break-word;
 }
 
@@ -242,7 +263,7 @@ header {
     line-height: 1.6;
     color: #3BCD09;
     font-size: 1.2rem;
-    max-width: 700px; 
+    max-width: 850px; 
     text-align: right;
     overflow-wrap: break-word;
 }
@@ -336,8 +357,36 @@ header {
     line-height: 1.6;
     font-size: 1.2rem;
     color: #3BCD09;
-    max-width: 700px; /* controla a largura do texto */
+    max-width: 850px; 
     overflow-wrap: break-word;
+}
+
+/* Estilo para o link */
+.link-github {
+    color: #3BCD09;
+    font-size: 1.2rem;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.link-github::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+    background-color: #3BCD09;
+    transition: width 0.3s ease;
+}
+
+.link-github:hover {
+    color: #4EE00C;
+}
+
+.link-github:hover::after {
+    width: 100%;
 }
 
 /* ======================= */
