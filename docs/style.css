@@ -523,9 +523,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 300px;
-    background-color: #121212c4;
     z-index: 1000;
-    border-bottom: 1px solid #444;
+
 }
 
 /* ---- NAVBAR PRINCIPAL ---- */
@@ -604,6 +603,7 @@ nav ul li a:hover {
     .navbar {
         border-bottom: none;
         padding: 0;
+        background-color: transparent;
     }
 
     .menu-icon {
